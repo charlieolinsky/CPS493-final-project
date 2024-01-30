@@ -2,6 +2,8 @@ The first thing that you will post here will be a file in a folder called no-fra
 That file should be a reproduction of https://newpaltz-examples.onrender.com/static/bulma/todo.html 
 
 Components ill need:
+
+[Columns] website is broken into three columns below the navbar
 Navbar
 Card
 Panel
