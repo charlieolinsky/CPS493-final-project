@@ -13,31 +13,16 @@
       src="https://kit.fontawesome.com/b4ec22da45.js"
       crossorigin="anonymous"
     ></script>
-
-    <style>
-      /* .column {
-        margin-top: 50px;
-      }
-
-      #left-column {
-        margin-left: 40px;
-      }
-      #middle-column {
-      }
-      #right-column {
-        margin-right: 40px;
-      } */
-    </style>
-    <title>First Bulma Example (Mine)</title>
+    <title>First Bulma Example</title>
   </head>
+  <style></style>
   <body>
     <!-- Navbar Start  -->
     <nav class="navbar is-primary">
       <div class="navbar-brand">
         <a class="navbar-item" href="https://bulma.io">
           <img
-            src="../no-framework/assets/bulma-logo-white.png"
-            alt="Bulma: a modern CSS framework based on Flexbox"
+            src="https://bulma.io/images/bulma-logo-white.png"
             width="112"
             height="28"
           />
@@ -177,7 +162,7 @@
             </div>
           </div>
           <div class="column is-half" id="middle-column">
-            <nav class="panel">
+            <article class="panel">
               <div class="tabs is-boxed">
                 <ul>
                   <li class="is-active">
@@ -217,53 +202,50 @@
 
               <div class="panel-block">
                 <p class="control has-icons-left">
-                  <input class="input" type="text" placeholder="New Task" />
+                  <input
+                    class="input is-primary"
+                    type="text"
+                    placeholder="New Task"
+                  />
                   <span class="icon is-left">
                     <i class="fa-solid fa-calendar-plus"></i>
                   </span>
                 </p>
               </div>
 
-              <a class="panel-block is-active">
-                <label class="checkbox">
-                  <input type="checkbox" />
-                  Make Bulma great again
-                </label>
+              <a class="panel-block">
+                <input type="checkbox" checked />
+                Make Bulma great again
               </a>
-              <a class="panel-block is-active">
-                <label class="checkbox">
-                  <input type="checkbox" />
-                  Add some more features
-                </label>
+              <a class="panel-block">
+                <input type="checkbox" />
+                Add some more features
               </a>
-              <a class="panel-block is-active">
-                <label class="checkbox">
-                  <input type="checkbox" />
-                  Make a github account
-                </label>
+              <a class="panel-block">
+                <input type="checkbox" />
+                Make a github account
               </a>
-              <a class="panel-block is-active">
-                <label class="checkbox">
-                  <input type="checkbox" />
-                  Learn how to use github
-                </label>
+              <a class="panel-block">
+                <input type="checkbox" />
+                Learn how to use github
               </a>
-              <a class="panel-block is-active">
-                <label class="checkbox">
-                  <input type="checkbox" />
-                  add a .gitignore file
-                </label>
+              <a class="panel-block">
+                <input type="checkbox" />
+                add a .gitignore file
               </a>
-            </nav>
+            </article>
             <article class="message is-primary">
               <div class="message-header">
-                <p>Primary</p>
+                <p>Make a github account</p>
                 <button class="delete" aria-label="delete"></button>
               </div>
               <div class="message-body">
-                Go to <a href="#">github.com</a> and create an account. That's
-                where you'll be able to share your work with the world.. thats
-                where we will be putting all of our code for this class.
+                <p>Go to <a href="#">github.com</a> and create an account.</p>
+                <p>
+                  That's where you'll be able to share your work with the
+                  world.. thats where we will be putting all of our code for
+                  this class.
+                </p>
 
                 <progress class="progress is-success" value="60" max="100">
                   60%
