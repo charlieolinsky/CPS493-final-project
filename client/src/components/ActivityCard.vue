@@ -1,8 +1,71 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { defineProps } from "vue";
+
+const props = defineProps({
+  name: String,
+  handle: String,
+  profilePicURL: String,
+  description: String,
+  distance: Number,
+  duration: Number,
+  location: String,
+  imageURL: String,
+});
+</script>
 
 <template>
-  <div>
-    <h1>Actvitiy Card!</h1>
+  <div class="box">
+    <article class="media">
+      <div class="media-left">
+        <figure class="image is-64x64">
+          <img :src="profilePicURL" alt="" />
+        </figure>
+      </div>
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>{{ name }} </strong> <small>{{ handle }} </small>
+            <small> TIME AGO </small>
+            <br />
+            {{ description }} - {{ location }}
+          </p>
+          <div class="columns">
+            <div class="column has-text-centered">
+              <div class="title">{{ distance ? distance + "mi" : "0 mi" }}</div>
+              <div class="heading">DISTANCE</div>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="title">{{ duration ? "00:" + duration : "0:0" }}</div>
+              <div class="heading">DURATION</div>
+            </div>
+
+            <div class="column has-text-centered">
+              <img :src="imageURL" alt="" />
+            </div>
+          </div>
+        </div>
+        <nav class="level is-mobile">
+          <div class="level-left">
+            <a class="level-item" aria-label="reply">
+              <span class="icon is-small">
+                <i class="fas fa-reply" aria-hidden="true"></i>
+              </span>
+            </a>
+            <a class="level-item" aria-label="retweet">
+              <span class="icon is-small">
+                <i class="fas fa-retweet" aria-hidden="true"></i>
+              </span>
+            </a>
+            <a class="level-item" aria-label="like">
+              <span class="icon is-small">
+                <i class="fas fa-heart" aria-hidden="true"></i>
+              </span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </article>
   </div>
 </template>
 
