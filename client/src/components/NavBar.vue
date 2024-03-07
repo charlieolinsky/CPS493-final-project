@@ -36,8 +36,9 @@ function toggleMenu() {
       :class="{ 'is-active': isActive }"
     >
       <div class="navbar-start">
-        <a class="navbar-item"> My Activity </a>
-
+        <RouterLink to="/activity" class="navbar-item">
+          My Activity
+        </RouterLink>
         <a class="navbar-item"> Statistics </a>
 
         <a class="navbar-item"> Friends Activity </a>
