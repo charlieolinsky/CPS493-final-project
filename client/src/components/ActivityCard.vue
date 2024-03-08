@@ -3,11 +3,11 @@ import { defineProps } from "vue";
 
 const props = defineProps({
   name: String,
-  handle: String,
+  username: String,
   profilePicURL: String,
   description: String,
-  distance: Number,
-  duration: Number,
+  distance: String,
+  duration: String,
   location: String,
   imageURL: String,
 });
@@ -18,13 +18,13 @@ const props = defineProps({
     <article class="media">
       <div class="media-left">
         <figure class="image is-64x64">
-          <img :src="profilePicURL" alt="" />
+          <img :src="profilePicURL" alt="No Image" />
         </figure>
       </div>
       <div class="media-content">
         <div class="content">
           <p>
-            <strong>{{ name }} </strong> <small>{{ handle }} </small>
+            <strong>{{ name }} </strong> <small>{{ username }} </small>
             <small> TIME AGO </small>
             <br />
             {{ description }} - {{ location }}
@@ -41,7 +41,7 @@ const props = defineProps({
             </div>
 
             <div class="column has-text-centered">
-              <img :src="imageURL" alt="" />
+              <img :src="imageURL" alt="No Image" />
             </div>
           </div>
         </div>

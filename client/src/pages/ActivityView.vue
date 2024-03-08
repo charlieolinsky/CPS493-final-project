@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import ActivityCard from "@/components/ActivityCard.vue";
+import { type User, getUsers } from "../models/users";
+import { ref } from "vue";
+
+const users = ref([] as User[]);
+users.value = getUsers();
 </script>
 
 <template>
@@ -10,36 +15,22 @@ import ActivityCard from "@/components/ActivityCard.vue";
         <div class="column is-half is-offset-one-quarter media">
           <button class="button is-primary is-fullwidth">Add Workout</button>
 
-          <ActivityCard
-            name="Erica Dubie"
-            handle="@ericadubie"
-            description="Incline Walk Goes Crazy!"
-            distance="3.5"
-            duration="45"
-            profilePicURL="https://bulma.io/images/placeholders/128x128.png"
-            imageURL="https://bulma.io/images/placeholders/128x128.png"
-            location="SUNY New Paltz"
-          />
-          <ActivityCard
-            name="Erica Dubie"
-            handle="@ericadubie"
-            description="Incline Walk Goes Crazy!"
-            distance="3.5"
-            duration="45"
-            profilePicURL="https://bulma.io/images/placeholders/128x128.png"
-            imageURL="https://bulma.io/images/placeholders/128x128.png"
-            location="SUNY New Paltz"
-          />
-          <ActivityCard
-            name="Erica Dubie"
-            handle="@ericadubie"
-            description="Incline Walk Goes Crazy!"
-            distance="3.5"
-            duration="45"
-            profilePicURL="https://bulma.io/images/placeholders/128x128.png"
-            imageURL="https://bulma.io/images/placeholders/128x128.png"
-            location="SUNY New Paltz"
-          />
+          <div
+            class="activity-cards"
+            v-for="(user, index) in users"
+            :key="index"
+          >
+            <ActivityCard
+              :name="user.name"
+              :username="user.username"
+              :description="user.description"
+              :distance="user.distance"
+              :duration="user.duration"
+              :profilePicURL="user.profilePicURL"
+              :imageURL="user.imageURL"
+              :location="user.location"
+            ></ActivityCard>
+          </div>
         </div>
       </div>
     </div>

@@ -1,0 +1,37 @@
+{
+  "items": [
+    {
+      "name": "John Doe",
+      "username": "@johndoe",
+      "profilePicURL": "https://example.com/profiles/johndoe.png",
+      "description": "Morning run around the park",
+      "distance": "5.2",
+      "duration": "00:30",
+      "location": "Central Park",
+      "imageURL": "https://example.com/images/run1.png"
+    },
+    {
+      "name": "Jane Smith",
+      "username": "@janesmith",
+      "profilePicURL": "https://example.com/profiles/janesmith.png",
+      "description": "Evening walk by the river",
+      "distance": "3.7",
+      "duration": "01:00",
+      "location": "River Side",
+      "imageURL": "https://example.com/images/walk1.png"
+    },
+    {
+      "name": "Bob Johnson",
+      "username": "@bobjohnson",
+      "profilePicURL": "https://example.com/profiles/bobjohnson.png",
+      "description": "Cycling through the city",
+      "distance": "10.5",
+      "duration": "00:45",
+      "location": "Downtown",
+      "imageURL": "https://example.com/images/cycle1.png"
+    }
+  ],
+  "total": "3",
+  "skip": "0",
+  "limit": "3"
+}
