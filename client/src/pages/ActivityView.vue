@@ -29,6 +29,7 @@ users.value = getUsers();
               :profilePicURL="user.profilePicURL"
               :imageURL="user.imageURL"
               :location="user.location"
+              :timePosted="user.timePosted"
             ></ActivityCard>
           </div>
         </div>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps } from "vue";
+import { defineProps, ref } from "vue";
 
 const props = defineProps({
   name: String,
@@ -10,11 +10,18 @@ const props = defineProps({
   duration: String,
   location: String,
   imageURL: String,
+  timePosted: String,
 });
+
+const isVisible = ref(true);
+
+const toggleVisibility = () => {
+  isVisible.value = !isVisible.value;
+};
 </script>
 
 <template>
-  <div class="box">
+  <div class="box" v-show="isVisible">
     <article class="media">
       <div class="media-left">
         <figure class="image is-64x64">
@@ -25,7 +32,7 @@ const props = defineProps({
         <div class="content">
           <p>
             <strong>{{ name }} </strong> <small>{{ username }} </small>
-            <small> TIME AGO </small>
+            <small class="time-posted"> {{ timePosted }} </small>
             <br />
             {{ description }} - {{ location }}
           </p>
@@ -65,8 +72,15 @@ const props = defineProps({
           </div>
         </nav>
       </div>
+      <div class="media-right">
+        <button @click="toggleVisibility" class="delete is-medium"></button>
+      </div>
     </article>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.time-posted {
+  margin-left: 10px;
+}
+</style>

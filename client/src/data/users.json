@@ -8,7 +8,8 @@
       "distance": "5.2",
       "duration": "00:30",
       "location": "Central Park",
-      "imageURL": "https://picsum.photos/200/350"
+      "imageURL": "https://picsum.photos/200/350",
+      "timePosted": "6 min ago"
     },
     {
       "name": "Jane Smith",
@@ -18,7 +19,8 @@
       "distance": "3.7",
       "duration": "01:00",
       "location": "River Side",
-      "imageURL": "https://picsum.photos/200/150"
+      "imageURL": "https://picsum.photos/200/150",
+      "timePosted": "1 day ago"
     },
     {
       "name": "Bob Johnson",
@@ -28,7 +30,8 @@
       "distance": "10.5",
       "duration": "00:45",
       "location": "Downtown",
-      "imageURL": "https://picsum.photos/200/250"
+      "imageURL": "https://picsum.photos/200/250",
+      "timePosted": "4 days ago"
     }
   ],
   "total": "3",
