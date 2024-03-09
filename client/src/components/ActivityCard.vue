@@ -38,7 +38,9 @@ const toggleVisibility = () => {
           </p>
           <div class="columns">
             <div class="column has-text-centered">
-              <div class="title">{{ distance ? distance + "mi" : "0 mi" }}</div>
+              <div class="title">
+                {{ distance ? distance + " mi" : "0 mi" }}
+              </div>
               <div class="heading">DISTANCE</div>
             </div>
 
