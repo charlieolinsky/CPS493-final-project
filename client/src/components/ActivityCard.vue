@@ -5,7 +5,7 @@ const props = defineProps({
   name: String,
   username: String,
   profilePicURL: String,
-  description: String,
+  title: String,
   distance: String,
   duration: String,
   location: String,
@@ -34,7 +34,7 @@ const toggleVisibility = () => {
             <strong>{{ name }} </strong> <small>{{ username }} </small>
             <small class="time-posted"> {{ timePosted }} </small>
             <br />
-            {{ description }} - {{ location }}
+            {{ title }} - {{ location }}
           </p>
           <div class="columns">
             <div class="column has-text-centered">

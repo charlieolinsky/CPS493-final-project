@@ -4,7 +4,7 @@ export interface User {
     name: string
     username: string
     profilePicURL: string
-    description: string
+    title: string
     distance: string
     duration: string
     location: string
