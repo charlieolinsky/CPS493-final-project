@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { defineProps, ref } from "vue";
+import { ref } from "vue";
 
-const props = defineProps({
+const props = {
   name: String,
   username: String,
   profilePicURL: String,
@@ -11,7 +11,7 @@ const props = defineProps({
   location: String,
   imageURL: String,
   timePosted: String,
-});
+};
 
 const isVisible = ref(true);
 
