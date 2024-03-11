@@ -5,6 +5,11 @@ import { ref } from "vue";
 
 const users = ref([] as User[]);
 users.value = getUsers();
+
+const formIsOpen = ref(false);
+const toggleForm = () => {
+  formIsOpen.value = !formIsOpen.value;
+};
 </script>
 
 <template>
@@ -13,14 +18,20 @@ users.value = getUsers();
       <h1 class="title">My Activity</h1>
       <div class="columns">
         <div class="column is-half is-offset-one-quarter media">
-          <button class="button is-primary is-fullwidth">Add Workout</button>
-          <form>
+          <button class="button is-primary is-fullwidth" @click="toggleForm">
+            Add Workout
+          </button>
+          <form v-show="formIsOpen">
             <div class="modal is-active">
               <div class="modal-background"></div>
               <div class="modal-card">
                 <header class="modal-card-head">
                   <p class="modal-card-title">Add a Workout</p>
-                  <button class="delete" aria-label="close"></button>
+                  <button
+                    @click.prevent="toggleForm"
+                    class="delete"
+                    aria-label="close"
+                  ></button>
                 </header>
                 <section class="modal-card-body">
                   <div class="field">
