@@ -31,7 +31,7 @@ const toggleVisibility = () => {
       <div class="media-content">
         <div class="content">
           <p>
-            <strong>{{ name }} </strong> <small>{{ username }} </small>
+            <strong>{{ name }} </strong> <small>@{{ username }} </small>
             <small class="time-posted"> {{ timePosted }} </small>
             <br />
             {{ title }} - {{ location }}

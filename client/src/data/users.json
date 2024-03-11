@@ -2,7 +2,7 @@
   "items": [
     {
       "name": "John Doe",
-      "username": "@johndoe",
+      "username": "johndoe",
       "profilePicURL": "https://picsum.photos/id/1/200/300",
       "title": "Morning run around the park",
       "distance": "5.2",
@@ -13,7 +13,7 @@
     },
     {
       "name": "Jane Smith",
-      "username": "@janesmith",
+      "username": "janesmith",
       "profilePicURL": "https://picsum.photos/id/22/200/300",
       "title": "Evening walk by the river",
       "distance": "3.7",
@@ -24,7 +24,7 @@
     },
     {
       "name": "Bob Johnson",
-      "username": "@bobjohnson",
+      "username": "bobjohnson",
       "profilePicURL": "https://picsum.photos/id/27/200/300",
       "title": "Cycling through the city",
       "distance": "10.5",
