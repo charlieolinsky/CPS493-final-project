@@ -13,8 +13,8 @@ const props = defineProps({
   timePosted: String,
 });
 
+//General Function for showing and hiding the card
 const isVisible = ref(true);
-
 const toggleVisibility = () => {
   isVisible.value = !isVisible.value;
 };

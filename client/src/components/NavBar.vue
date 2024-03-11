@@ -39,7 +39,9 @@ function toggleMenu() {
         <RouterLink to="/activity" class="navbar-item">
           My Activity
         </RouterLink>
-        <a class="navbar-item"> Statistics </a>
+        <RouterLink to="/statistics" class="navbar-item">
+          Statistics
+        </RouterLink>
 
         <a class="navbar-item"> Friends Activity </a>
 
