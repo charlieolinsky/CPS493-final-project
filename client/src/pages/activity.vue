@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import ActivityCard from "@/components/ActivityCard.vue";
-import { type User, getUsers } from "../models/users";
+import { type Actviity, getActviity } from "../models/activity";
 import { ref } from "vue";
 
-const users = ref([] as User[]);
-users.value = getUsers();
+const activities = ref([] as Actviity[]);
+activities.value = getActviity();
 
 const formIsOpen = ref(false);
 
@@ -23,7 +23,7 @@ const handleToggleForm = () => {
 
 const handleAddWorkout = () => {
   //Add new workout card to the top of the list
-  users.value.unshift({
+  activities.value.unshift({
     name: "PLACEHOLDER",
     username: "placeholder",
     profilePicURL: "",
@@ -156,19 +156,19 @@ const handleAddWorkout = () => {
 
           <div
             class="activity-cards"
-            v-for="(user, index) in users"
+            v-for="(activity, index) in activities"
             :key="index"
           >
             <ActivityCard
-              :name="user.name"
-              :username="user.username"
-              :title="user.title"
-              :distance="user.distance"
-              :duration="user.duration"
-              :profilePicURL="user.profilePicURL"
-              :imageURL="user.imageURL"
-              :location="user.location"
-              :timePosted="user.timePosted"
+              :name="activity.name"
+              :username="activity.username"
+              :title="activity.title"
+              :distance="activity.distance"
+              :duration="activity.duration"
+              :profilePicURL="activity.profilePicURL"
+              :imageURL="activity.imageURL"
+              :location="activity.location"
+              :timePosted="activity.timePosted"
             ></ActivityCard>
           </div>
         </div>
