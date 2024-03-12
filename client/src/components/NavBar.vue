@@ -1,10 +1,17 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { type Ref, ref } from "vue";
+import { getUserStore } from "../global/users";
 
-const isActive = ref(false);
+const userStore = getUserStore();
 
-function toggleMenu() {
-  isActive.value = !isActive.value;
+const burgerIsActive = ref(false);
+const loginIsActive = ref(false);
+
+function toggleBurger() {
+  burgerIsActive.value = !burgerIsActive.value;
+}
+function toggleLogin() {
+  loginIsActive.value = !loginIsActive.value;
 }
 </script>
 
@@ -18,11 +25,11 @@ function toggleMenu() {
       <a
         role="button"
         class="navbar-burger"
-        :class="{ 'is-active': isActive }"
-        @click="toggleMenu"
         aria-label="menu"
         aria-expanded="false"
         data-target="navbarBasicExample"
+        :class="{ 'is-active': burgerIsActive }"
+        @click="toggleBurger"
       >
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -33,7 +40,7 @@ function toggleMenu() {
     <div
       id="navbarBasicExample"
       class="navbar-menu"
-      :class="{ 'is-active': isActive }"
+      :class="{ 'is-active': burgerIsActive }"
     >
       <div class="navbar-start">
         <RouterLink to="/activity" class="navbar-item">
@@ -62,7 +69,36 @@ function toggleMenu() {
             <a class="button is-primary">
               <strong>Sign up</strong>
             </a>
-            <a class="button is-light"> Log in </a>
+            <!-- Start Login Button -->
+            <div class="dropdown" :class="{ 'is-active': loginIsActive }">
+              <div @click="toggleLogin" class="dropdown-trigger">
+                <button
+                  class="button"
+                  id="login-button"
+                  aria-haspopup="true"
+                  aria-controls="dropdown-menu"
+                >
+                  <span>Login</span>
+                  <span class="icon is-small">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </button>
+              </div>
+              <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                  <a
+                    v-for="user in userStore.users"
+                    href="#"
+                    class="dropdown-item"
+                  >
+                    {{ user.name }}
+                  </a>
+                  <hr class="dropdown-divider" />
+                  <a href="#" class="dropdown-item"> Other Account </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Login Button -->
             <a
               class="bd-tw-button button"
               data-social-network="Twitter"
@@ -84,3 +120,4 @@ function toggleMenu() {
 </template>
 
 <style scoped></style>
+../global/store/users../global/users

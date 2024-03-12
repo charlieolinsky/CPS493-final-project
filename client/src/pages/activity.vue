@@ -1,10 +1,14 @@
 <script setup lang="ts">
-import ActivityCard from "@/components/ActivityCard.vue";
-import { type Actviity, getActviity } from "../models/activity";
 import { ref } from "vue";
+import ActivityCard from "@/components/ActivityCard.vue";
+import { type Activity, getActivity } from "../models/activity";
+import { getUserStore } from "../global/users";
 
-const activities = ref([] as Actviity[]);
-activities.value = getActviity();
+const userStore = getUserStore();
+const users = userStore.users;
+
+const activities = ref([] as Activity[]);
+activities.value = getActivity();
 
 const formIsOpen = ref(false);
 
@@ -24,9 +28,8 @@ const handleToggleForm = () => {
 const handleAddWorkout = () => {
   //Add new workout card to the top of the list
   activities.value.unshift({
-    name: "PLACEHOLDER",
-    username: "placeholder",
-    profilePicURL: "",
+    name: users.filter((user) => user.isLoggedIn === true)[0].name,
+    username: users.filter((user) => user.isLoggedIn === true)[0].username,
     title: workout.value.title,
     distance: "0",
     duration: workout.value.duration,
@@ -160,12 +163,19 @@ const handleAddWorkout = () => {
             :key="index"
           >
             <ActivityCard
-              :name="activity.name"
-              :username="activity.username"
+              :name="
+                users.filter((user) => user.name === activity.name)[0].name
+              "
+              :username="
+                users.filter((user) => user.name === activity.name)[0].username
+              "
+              :profilePicURL="
+                users.filter((user) => user.name === activity.name)[0]
+                  .profilePicURL
+              "
               :title="activity.title"
               :distance="activity.distance"
               :duration="activity.duration"
-              :profilePicURL="activity.profilePicURL"
               :imageURL="activity.imageURL"
               :location="activity.location"
               :timePosted="activity.timePosted"

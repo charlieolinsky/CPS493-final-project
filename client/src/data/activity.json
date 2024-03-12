@@ -1,9 +1,8 @@
 {
   "items": [
     {
-      "name": "John Doe",
-      "username": "johndoe",
-      "profilePicURL": "https://picsum.photos/id/1/200/300",
+      "name": "Moshe Plotkin",
+      "username": "jewpaltz",
       "title": "Morning run around the park",
       "distance": "5.2",
       "duration": "00:30",
@@ -12,9 +11,8 @@
       "timePosted": "6 min ago"
     },
     {
-      "name": "Jane Smith",
-      "username": "janesmith",
-      "profilePicURL": "https://picsum.photos/id/22/200/300",
+      "name": "Charles Olinsky",
+      "username": "pdox9235",
       "title": "Evening walk by the river",
       "distance": "3.7",
       "duration": "01:00",
@@ -23,12 +21,21 @@
       "timePosted": "1 day ago"
     },
     {
-      "name": "Bob Johnson",
-      "username": "bobjohnson",
-      "profilePicURL": "https://picsum.photos/id/27/200/300",
+      "name": "Charles Olinsky",
+      "username": "pdox9235",
       "title": "Cycling through the city",
       "distance": "10.5",
       "duration": "00:45",
+      "location": "Downtown",
+      "imageURL": "https://picsum.photos/200/250",
+      "timePosted": "4 days ago"
+    },
+    {
+      "name": "Charles Olinsky",
+      "username": "pdox9235",
+      "title": "Running through the trenches",
+      "distance": "10.3",
+      "duration": "00:12",
       "location": "Downtown",
       "imageURL": "https://picsum.photos/200/250",
       "timePosted": "4 days ago"

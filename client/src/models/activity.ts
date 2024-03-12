@@ -1,9 +1,8 @@
 import data from '../data/activity.json';  
 
-export interface Actviity {
+export interface Activity {
     name: string
     username: string
-    profilePicURL: string
     title: string
     distance: string
     duration: string
@@ -12,6 +11,6 @@ export interface Actviity {
     timePosted: string
 }
 
-export function getActviity(): Actviity[] {
+export function getActivity(): Activity[] {
     return data.items;
 }
