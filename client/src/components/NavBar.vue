@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { type Ref, ref } from "vue";
-import { getUserStore } from "../global/users";
+import { type User, getUserStore } from "../global/users";
 
 const userStore = getUserStore();
 
@@ -10,7 +10,7 @@ const loginIsActive = ref(false);
 function toggleBurger() {
   burgerIsActive.value = !burgerIsActive.value;
 }
-function toggleLogin() {
+function toggleLoginDropdown() {
   loginIsActive.value = !loginIsActive.value;
 }
 </script>
@@ -43,9 +43,17 @@ function toggleLogin() {
       :class="{ 'is-active': burgerIsActive }"
     >
       <div class="navbar-start">
-        <RouterLink to="/activity" class="navbar-item">
+        <RouterLink
+          v-if="userStore.getLoggedInUser() !== undefined"
+          to="/activity"
+          class="navbar-item"
+        >
           My Activity
         </RouterLink>
+        <RouterLink v-else to="/login-prompt" class="navbar-item">
+          My Activity (No)
+        </RouterLink>
+
         <RouterLink to="/statistics" class="navbar-item">
           Statistics
         </RouterLink>
@@ -71,7 +79,7 @@ function toggleLogin() {
             </a>
             <!-- Start Login Button -->
             <div class="dropdown" :class="{ 'is-active': loginIsActive }">
-              <div @click="toggleLogin" class="dropdown-trigger">
+              <div @click="toggleLoginDropdown" class="dropdown-trigger">
                 <button
                   class="button"
                   id="login-button"
@@ -88,6 +96,8 @@ function toggleLogin() {
                 <div class="dropdown-content">
                   <a
                     v-for="user in userStore.users"
+                    :key="user.id"
+                    @click="userStore.userLogIn(user.username)"
                     href="#"
                     class="dropdown-item"
                   >
@@ -120,4 +130,3 @@ function toggleLogin() {
 </template>
 
 <style scoped></style>
-../global/store/users../global/users

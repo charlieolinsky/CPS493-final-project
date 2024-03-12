@@ -26,6 +26,10 @@ const handleToggleForm = () => {
 };
 
 const handleAddWorkout = () => {
+  console.log(
+    "Add workout for: " +
+      users.filter((user) => user.isLoggedIn === true)[0].name
+  );
   //Add new workout card to the top of the list
   activities.value.unshift({
     name: users.filter((user) => user.isLoggedIn === true)[0].name,
