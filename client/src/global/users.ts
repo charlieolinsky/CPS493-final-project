@@ -26,10 +26,10 @@ export const getUserStore = (): UserStore => {
       { name: "John Smith", username: "jsmitty", id: 3, isLoggedIn: false }
   ]);
 
-  const userLogIn = (username: string) => {
+  const userLogIn = (name: string) => {
     //Log in the specified user
     users.forEach((user) => {
-      if (user.username === username) {
+      if (user.name === name) {
         user.isLoggedIn = true;
         console.log(`${user.name} is logged in`);
       }
@@ -47,8 +47,9 @@ export const getUserStore = (): UserStore => {
   }
 
   const getLoggedInUser = () => {
-    return users.find((user) => user.isLoggedIn);
+    return users.find((user) => user.isLoggedIn === true);
   }
 
   return { users, userLogIn, userLogOut, getLoggedInUser };
 };
+

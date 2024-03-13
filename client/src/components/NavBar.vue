@@ -1,8 +1,13 @@
 <script setup lang="ts">
-import { type Ref, ref } from "vue";
+import { ref, computed, watchEffect } from "vue";
 import { type User, getUserStore } from "../global/users";
 
+//DEBUG --START
 const userStore = getUserStore();
+watchEffect(() => {
+  console.log("NavBar, User Store Changed:", userStore.users);
+});
+//DEBUG -- END
 
 const burgerIsActive = ref(false);
 const loginIsActive = ref(false);
@@ -13,6 +18,15 @@ function toggleBurger() {
 function toggleLoginDropdown() {
   loginIsActive.value = !loginIsActive.value;
 }
+
+function handleLogOut() {
+  userStore.userLogOut();
+  loginIsActive.value = false;
+}
+
+const loggedInUser = computed(() => {
+  return userStore.getLoggedInUser();
+});
 </script>
 
 <template>
@@ -45,7 +59,7 @@ function toggleLoginDropdown() {
       >
         <div class="navbar-start">
           <RouterLink
-            v-if="userStore.getLoggedInUser() !== undefined"
+            v-if="loggedInUser !== undefined"
             to="/activity"
             class="navbar-item"
           >
@@ -75,14 +89,23 @@ function toggleLoginDropdown() {
         </div>
 
         <div class="navbar-end">
+          <div v-if="loggedInUser !== undefined" class="profile-image">
+            <figure class="image is-48x48">
+              <img id="nav-profile-pic" :src="loggedInUser?.profilePicURL" />
+            </figure>
+
+            <div class="title is-5">
+              {{ loggedInUser?.name }}
+            </div>
+          </div>
           <div class="navbar-item">
             <div class="buttons">
-              <a class="button is-primary">
+              <a v-if="loggedInUser === undefined" class="button is-primary">
                 <strong>Sign up</strong>
               </a>
               <!-- Start Login Button -->
               <div
-                v-if="userStore.getLoggedInUser() === undefined"
+                v-if="loggedInUser === undefined"
                 class="dropdown"
                 :class="{ 'is-active': loginIsActive }"
               >
@@ -104,7 +127,7 @@ function toggleLoginDropdown() {
                     <a
                       v-for="user in userStore.users"
                       :key="user.id"
-                      @click="userStore.userLogIn(user.username)"
+                      @click="userStore.userLogIn(user.name)"
                       href="#"
                       class="dropdown-item"
                     >
@@ -115,12 +138,8 @@ function toggleLoginDropdown() {
                   </div>
                 </div>
               </div>
-              <div
-                v-else
-                class="button is-primary"
-                @click="userStore.userLogOut()"
-              >
-                Log Out
+              <div v-else class="button is-primary" @click="handleLogOut">
+                <span>Log Out</span>
               </div>
               <!-- End Login Button -->
               <a
@@ -144,4 +163,21 @@ function toggleLoginDropdown() {
   </nav>
 </template>
 
-<style scoped></style>
+<style scoped>
+.profile-image {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.profile-image .title {
+  margin-left: 8px;
+  color: white;
+}
+
+#nav-profile-pic {
+  max-height: 48px;
+  max-width: 48px;
+  border-radius: 10%;
+}
+</style>

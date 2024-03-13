@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref, watchEffect } from "vue";
 import ActivityCard from "@/components/ActivityCard.vue";
 import { type Activity, getActivity } from "../models/activity";
 import { getUserStore } from "../global/users";
@@ -21,19 +21,32 @@ const workout = ref({
   type: "",
 });
 
+//DEBUG --START
+watchEffect(() => {
+  console.log("activity, User Store Changed:", userStore.users);
+});
+//DEBUG -- END
+
 const handleToggleForm = () => {
   formIsOpen.value = !formIsOpen.value;
 };
 
+const loggedInUser = computed(() => {
+  return userStore.getLoggedInUser();
+});
+
 const handleAddWorkout = () => {
-  console.log(
-    "Add workout for: " +
-      users.filter((user) => user.isLoggedIn === true)[0].name
-  );
-  //Add new workout card to the top of the list
+  if (!loggedInUser.value) {
+    console.error("No logged-in user found.");
+    return; // Exit the function if no logged-in user is found
+  }
+
+  console.log("Add workout for: " + loggedInUser.value.name);
+
+  // Proceed with adding the new workout card
   activities.value.unshift({
-    name: users.filter((user) => user.isLoggedIn === true)[0].name,
-    username: users.filter((user) => user.isLoggedIn === true)[0].username,
+    name: loggedInUser.value.name,
+    username: loggedInUser.value.username,
     title: workout.value.title,
     distance: "0",
     duration: workout.value.duration,
@@ -52,7 +65,7 @@ const handleAddWorkout = () => {
     type: "",
   };
 
-  //Close form
+  // Close form
   handleToggleForm();
 };
 </script>
