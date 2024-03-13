@@ -21,7 +21,7 @@ const props = defineProps<{
         <p class="caption">Duration</p>
       </div>
       <div class="column is-half">
-        <p class="value">{{ avgPace }} mph</p>
+        <p class="value">{{ avgPace ? avgPace : 0 }} mph</p>
         <p class="caption">Avg Pace</p>
       </div>
       <div class="column is-half">

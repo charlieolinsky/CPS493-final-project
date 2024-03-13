@@ -8,7 +8,11 @@ import StatBox from "@/components/StatBox.vue";
 import { isToday, isThisWeek, parseISO } from "date-fns";
 
 const userStore = getUserStore();
-const activities = getActivity();
+const users = userStore.users;
+
+const activities = getActivity().filter(
+  (activity) => activity.name === userStore.getLoggedInUser()?.name
+);
 
 // Utility Functions
 

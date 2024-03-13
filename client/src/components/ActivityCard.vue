@@ -45,7 +45,7 @@ const toggleVisibility = () => {
             </div>
 
             <div class="column has-text-centered">
-              <div class="title">{{ duration ? "00:" + duration : "0:0" }}</div>
+              <div class="title">{{ duration ? duration : "00:00" }}</div>
               <div class="heading">DURATION</div>
             </div>
 
