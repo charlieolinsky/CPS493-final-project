@@ -60,7 +60,7 @@ const isAdmin = computed(() => {
         <div class="navbar-start">
           <RouterLink
             v-if="loggedInUser !== undefined"
-            to="/activity"
+            to="/my-activity"
             class="navbar-item"
           >
             My Activity
@@ -73,7 +73,7 @@ const isAdmin = computed(() => {
             Statistics
           </RouterLink>
 
-          <RouterLink to="/friends" class="navbar-item">
+          <RouterLink to="/friends-activity" class="navbar-item">
             Friends Activity
           </RouterLink>
 

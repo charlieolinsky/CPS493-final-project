@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import StatBox from "@/components/StatBox.vue";
 import { getActivity } from "@/models/activity";
 import { getUserStore } from "../global/users";
+import StatBox from "@/components/StatBox.vue";
+
+//External Imports
 import { isToday, isThisWeek, parseISO } from "date-fns";
 
 const userStore = getUserStore();

@@ -178,7 +178,9 @@ const handleAddWorkout = () => {
 
           <div
             class="activity-cards"
-            v-for="(activity, index) in activities"
+            v-for="(activity, index) in activities.filter(
+              (activity) => activity.username === loggedInUser?.username
+            )"
             :key="index"
           >
             <ActivityCard
