@@ -8,6 +8,8 @@ export interface User {
   id: number;
   isLoggedIn: boolean;
   profilePicURL?: string;
+  isAdmin: boolean;
+  emails: string[];
 }
 
 interface UserStore {
@@ -21,9 +23,9 @@ interface UserStore {
 //reactive is like ref, but for objects. It makes the object reactive, so that when it changes, the view updates. 
 export const getUserStore = (): UserStore => {
   const users = reactive<User[]>([
-    { name: "Charles Olinsky", username: "pdox9235", id: 2, isLoggedIn: false, profilePicURL: "https://picsum.photos/id/22/200/300"},
-      { name: "Moshe Plotkin", username: "jewpaltz", id: 1, isLoggedIn: false, profilePicURL: "https://picsum.photos/id/1/200/300"},
-      { name: "John Smith", username: "jsmitty", id: 3, isLoggedIn: false }
+    { name: "Charles Olinsky", username: "pdox9235", id: 2, isLoggedIn: false, profilePicURL: "https://picsum.photos/id/22/200/300", isAdmin: true, emails:["charlesolinsky@gmail.com", "olinskyc1@newpaltz.edu"]},
+      { name: "Moshe Plotkin", username: "jewpaltz", id: 1, isLoggedIn: false, profilePicURL: "https://picsum.photos/id/1/200/300", isAdmin: false, emails:["charlesolinsky@gmail.com", "olinskyc1@newpaltz.edu"]},
+      { name: "John Smith", username: "jsmitty", id: 3, isLoggedIn: false, isAdmin: false, emails:["charlesolinsky@gmail.com", "olinskyc1@newpaltz.edu"] }
   ]);
 
   const userLogIn = (name: string) => {

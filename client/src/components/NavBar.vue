@@ -83,7 +83,9 @@ const loggedInUser = computed(() => {
             <a class="navbar-link"> Admin </a>
 
             <div class="navbar-dropdown">
-              <a class="navbar-item"> Users </a>
+              <RouterLink to="/admin-users" class="navbar-item">
+                Users
+              </RouterLink>
             </div>
           </div>
         </div>
