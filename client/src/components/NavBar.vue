@@ -27,6 +27,10 @@ function handleLogOut() {
 const loggedInUser = computed(() => {
   return userStore.getLoggedInUser();
 });
+
+const isAdmin = computed(() => {
+  return loggedInUser.value?.isAdmin;
+});
 </script>
 
 <template>
@@ -83,7 +87,14 @@ const loggedInUser = computed(() => {
             <a class="navbar-link"> Admin </a>
 
             <div class="navbar-dropdown">
-              <RouterLink to="/admin-users" class="navbar-item">
+              <RouterLink
+                v-if="loggedInUser === undefined || !isAdmin"
+                to="/login-prompt"
+                class="navbar-item"
+              >
+                Users
+              </RouterLink>
+              <RouterLink v-else to="/admin-users" class="navbar-item">
                 Users
               </RouterLink>
             </div>
