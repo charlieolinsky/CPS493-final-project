@@ -74,7 +74,7 @@ const handleAddWorkout = () => {
 <template>
   <div class="container">
     <div>
-      <h1 class="title">My Activity</h1>
+      <h1 class="title">Friends Activity</h1>
       <div class="columns">
         <div class="column is-half is-offset-one-quarter media">
           <button
