@@ -77,7 +77,9 @@ const isAdmin = computed(() => {
             Friends Activity
           </RouterLink>
 
-          <a class="navbar-item"> People Search </a>
+          <RouterLink to="/people-search" class="navbar-item">
+            People Search
+          </RouterLink>
 
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link"> Admin </a>
