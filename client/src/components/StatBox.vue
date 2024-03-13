@@ -2,7 +2,7 @@
 const props = defineProps<{
   title: string;
   distance: number;
-  duration: number;
+  duration?: number | string;
   avgPace: number;
   calories: number;
 }>();

@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { defineProps, ref } from "vue";
 
-const props = defineProps({
-  name: String,
-  username: String,
-  profilePicURL: String,
-  title: String,
-  distance: String,
-  duration: String,
-  location: String,
-  imageURL: String,
-  timePosted: String,
-});
+const props = defineProps<{
+  name: string;
+  username: string;
+  profilePicURL: string | undefined;
+  title: string;
+  distance: number;
+  duration: string;
+  location: string;
+  imageURL: string;
+  timePosted: string;
+}>();
 
 //General Function for showing and hiding the card
 const isVisible = ref(true);

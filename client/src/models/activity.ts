@@ -4,7 +4,7 @@ export interface Activity {
     name: string
     username: string
     title: string
-    distance: string
+    distance: number
     duration: string
     location: string
     imageURL: string

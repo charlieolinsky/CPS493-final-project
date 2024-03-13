@@ -48,7 +48,7 @@ const handleAddWorkout = () => {
     name: loggedInUser.value.name,
     username: loggedInUser.value.username,
     title: workout.value.title,
-    distance: "0",
+    distance: 0,
     duration: workout.value.duration,
     location: workout.value.location,
     imageURL: workout.value.picture,
@@ -191,7 +191,7 @@ const handleAddWorkout = () => {
                   .profilePicURL
               "
               :title="activity.title"
-              :distance="activity.distance"
+              :distance=activity.distance
               :duration="activity.duration"
               :imageURL="activity.imageURL"
               :location="activity.location"
