@@ -13,6 +13,7 @@ export interface User {
 interface UserStore {
   users: User[];
   userLogIn(username: string): void;
+  userLogOut(): void;
   getLoggedInUser(): User | undefined;
 }
 
@@ -26,13 +27,6 @@ export const getUserStore = (): UserStore => {
   ]);
 
   const userLogIn = (username: string) => {
-    //Log out the currently logged in user
-    users.forEach((user) => {
-      if (user.isLoggedIn) {
-        user.isLoggedIn = false;
-        console.log(`${user.name} is logged out`);
-      }
-    });
     //Log in the specified user
     users.forEach((user) => {
       if (user.username === username) {
@@ -42,9 +36,19 @@ export const getUserStore = (): UserStore => {
     });
   }
 
+  const userLogOut = () => {
+    //Log out the currently logged in user
+    users.forEach((user) => {
+      if (user.isLoggedIn) {
+        user.isLoggedIn = false;
+        console.log(`${user.name} is logged out`);
+      }
+    });
+  }
+
   const getLoggedInUser = () => {
     return users.find((user) => user.isLoggedIn);
   }
 
-  return { users, userLogIn, getLoggedInUser };
+  return { users, userLogIn, userLogOut, getLoggedInUser };
 };
