@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watchEffect } from "vue";
+import { computed, ref } from "vue";
 import ActivityCard from "@/components/ActivityCard.vue";
 import { type Activity, getActivity } from "../models/activity";
 import { getUserStore } from "../global/users";
@@ -20,12 +20,6 @@ const workout = ref({
   picture: "",
   type: "",
 });
-
-//DEBUG --START
-watchEffect(() => {
-  console.log("activity, User Store Changed:", userStore.users);
-});
-//DEBUG -- END
 
 const handleToggleForm = () => {
   formIsOpen.value = !formIsOpen.value;

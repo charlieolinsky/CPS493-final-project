@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, watchEffect } from "vue";
+import { computed } from "vue";
 import StatBox from "@/components/StatBox.vue";
 import { getActivity } from "@/models/activity";
 import { getUserStore } from "../global/users";
@@ -7,11 +7,6 @@ import { isToday, isThisWeek, parseISO } from "date-fns";
 
 const userStore = getUserStore();
 const activities = getActivity();
-
-// Debugging User Store changes
-watchEffect(() => {
-  console.log("Landing, User Store Changed:", userStore.users);
-});
 
 // Utility Functions
 

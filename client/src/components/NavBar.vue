@@ -1,14 +1,9 @@
 <script setup lang="ts">
-import { ref, computed, watchEffect } from "vue";
+import { ref, computed } from "vue";
 import { type User, getUserStore } from "../global/users";
 
-//DEBUG --START
-const userStore = getUserStore();
-watchEffect(() => {
-  console.log("NavBar, User Store Changed:", userStore.users);
-});
-//DEBUG -- END
 
+const userStore = getUserStore();
 const burgerIsActive = ref(false);
 const loginIsActive = ref(false);
 
@@ -26,6 +21,7 @@ function handleLogOut() {
 
 const loggedInUser = computed(() => {
   return userStore.getLoggedInUser();
+  console.log("Logged In User: ", loggedInUser);
 });
 
 const isAdmin = computed(() => {
