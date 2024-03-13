@@ -8,37 +8,41 @@
       "duration": "00:30",
       "location": "Central Park",
       "imageURL": "https://picsum.photos/200/350",
-      "timePosted": "6 min ago"
+      "timePosted": "6 min ago",
+      "date": "2024-01-01"
     },
     {
       "name": "Charles Olinsky",
       "username": "pdox9235",
       "title": "Evening walk by the river",
       "distance": 3.7,
-      "duration": "00:30",
+      "duration": "03:30",
       "location": "River Side",
       "imageURL": "https://picsum.photos/200/150",
-      "timePosted": "1 day ago"
+      "timePosted": "1 day ago",
+      "date": "2024-02-23"
     },
     {
       "name": "Charles Olinsky",
       "username": "pdox9235",
       "title": "Cycling through the city",
       "distance": 10.5,
-      "duration": "00:30",
+      "duration": "03:30",
       "location": "Downtown",
       "imageURL": "https://picsum.photos/200/250",
-      "timePosted": "4 days ago"
+      "timePosted": "4 days ago",
+      "date": "2024-03-11"
     },
     {
       "name": "Charles Olinsky",
       "username": "pdox9235",
       "title": "Running through the trenches",
       "distance": 10.3,
-      "duration": "00:30",
+      "duration": "01:30",
       "location": "Downtown",
       "imageURL": "https://picsum.photos/200/250",
-      "timePosted": "4 days ago"
+      "timePosted": "4 days ago",
+      "date": "2024-03-13"
     }
   ],
   "total": "3",

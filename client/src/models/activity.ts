@@ -9,6 +9,7 @@ export interface Activity {
     location: string
     imageURL: string
     timePosted: string
+    date: string
 }
 
 export function getActivity(): Activity[] {

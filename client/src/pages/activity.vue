@@ -53,6 +53,7 @@ const handleAddWorkout = () => {
     location: workout.value.location,
     imageURL: workout.value.picture,
     timePosted: "Just now",
+    date: workout.value.date,
   });
 
   // Clear Workout Ref (clear form)
