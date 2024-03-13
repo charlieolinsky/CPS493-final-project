@@ -11,33 +11,33 @@ const props = defineProps<{
 <template>
   <div class="box has-text-success summary">
     <h2 class="title">{{ title }}</h2>
-    <div class="column is-multiline">
+    <div class="columns is-multiline is-mobile">
       <div class="column is-half">
-        <h3 class="value">{{ distance }}</h3>
-        <caption class="caption">
-          Distance
-        </caption>
+        <p class="value">{{ distance }} ft</p>
+        <p class="caption">Distance</p>
       </div>
       <div class="column is-half">
-        <h3 class="value">{{ duration }}</h3>
-        <caption class="caption">
-          Duration
-        </caption>
+        <p class="value">{{ duration }}</p>
+        <p class="caption">Duration</p>
       </div>
       <div class="column is-half">
-        <h3 class="value">{{ avgPace }}</h3>
-        <caption class="caption">
-          Avg Pace
-        </caption>
+        <p class="value">{{ avgPace }} mph</p>
+        <p class="caption">Avg Pace</p>
       </div>
       <div class="column is-half">
-        <h3 class="value">{{ calories }}</h3>
-        <caption class="caption">
-          Calories
-        </caption>
+        <p class="value">{{ calories }}</p>
+        <p class="caption">Calories</p>
       </div>
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.summary .value {
+  font-size: 2.5rem; /* Adjusted for better fit */
+  font-weight: 700;
+}
+.summary .caption {
+  font-size: 1rem; /* Add styling for caption */
+}
+</style>
