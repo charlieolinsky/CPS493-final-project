@@ -111,9 +111,9 @@ const isAdmin = computed(() => {
           </div>
           <div class="navbar-item">
             <div class="buttons">
-              <a v-if="loggedInUser === undefined" class="button is-primary">
+              <RouterLink to="/sign-in" v-if="loggedInUser === undefined" class="button is-primary">
                 <strong>Sign up</strong>
-              </a>
+              </RouterLink>
               <!-- Start Login Button -->
               <div
                 v-if="loggedInUser === undefined"
