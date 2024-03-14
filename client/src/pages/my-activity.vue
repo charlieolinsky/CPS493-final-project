@@ -21,12 +21,6 @@ const workout = ref({
   type: "",
 });
 
-//DEBUG --START
-watchEffect(() => {
-  console.log("activity, User Store Changed:", userStore.users);
-});
-//DEBUG -- END
-
 const handleToggleForm = () => {
   formIsOpen.value = !formIsOpen.value;
 };

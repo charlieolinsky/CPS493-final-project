@@ -35,9 +35,9 @@ function createInstance(): UserStore {
   // Initialize users array with default users, making it reactive.
   const users = reactive<User[]>([
     // Default users
-    { name: "Charles Olinsky", username: "pdox9235", id: 2, isLoggedIn: false, profilePicURL: "https://picsum.photos/id/22/200/300", isAdmin: true, emails:["charlesolinsky@gmail.com", "olinskyc1@newpaltz.edu"]},
-    { name: "Moshe Plotkin", username: "jewpaltz", id: 1, isLoggedIn: false, profilePicURL: "https://picsum.photos/id/1/200/300", isAdmin: false, emails:["charlesolinsky@gmail.com", "olinskyc1@newpaltz.edu"]},
-    { name: "John Smith", username: "jsmitty", id: 3, isLoggedIn: false, isAdmin: false, emails:["charlesolinsky@gmail.com", "olinskyc1@newpaltz.edu"] }
+    { name: "Charles Olinsky", username: "pdox9235", id: 2, isLoggedIn: false, profilePicURL: "https://picsum.photos/id/22/200/200", isAdmin: true, emails:["charlesolinsky@gmail.com", "olinskyc1@newpaltz.edu"]},
+    { name: "Moshe Plotkin", username: "jewpaltz", id: 1, isLoggedIn: false, profilePicURL: "https://picsum.photos/id/1/200/200", isAdmin: false, emails:["charlesolinsky@gmail.com", "olinskyc1@newpaltz.edu"]},
+    { name: "John Smith", username: "jsmitty", id: 3, isLoggedIn: false, isAdmin: false, profilePicURL: "https://picsum.photos/id/6/200/200" , emails:["charlesolinsky@gmail.com", "olinskyc1@newpaltz.edu"] }
   ]);
 
   // Method to log a user in by setting their isLoggedIn flag to true.
