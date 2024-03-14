@@ -9,7 +9,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="box has-text-success summary">
+  <div class="box has-text-success has-text-centered summary">
     <h2 class="title">{{ title }}</h2>
     <div class="columns is-multiline is-mobile">
       <div class="column is-half">
