@@ -43,7 +43,7 @@ const handleAddWorkout = () => {
     username: loggedInUser.value.username,
     title: workout.value.title,
     distance: 0,
-    duration: workout.value.duration,
+    duration: formatDuration(workout.value.duration),
     location: workout.value.location,
     imageURL: workout.value.picture,
     timePosted: "Just now",
@@ -63,6 +63,14 @@ const handleAddWorkout = () => {
   // Close form
   handleToggleForm();
 };
+
+//Return Duration in HH:MM format
+const formatDuration = (minutes: string) => {
+  const hours = Math.floor(parseInt(minutes) / 60);
+  const remainingMinutes = parseInt(minutes) % 60;
+  return `${hours.toString().padStart(2, '0')}:${remainingMinutes.toString().padStart(2, '0')}`;
+};
+
 </script>
 
 <template>
