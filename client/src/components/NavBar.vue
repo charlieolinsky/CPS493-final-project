@@ -145,7 +145,7 @@ const isAdmin = computed(() => {
                       {{ user.name }}
                     </a>
                     <hr class="dropdown-divider" />
-                    <a href="#" class="dropdown-item"> Other Account </a>
+                    <RouterLink to="login-prompt" class="dropdown-item"> Other Account </RouterLink>
                   </div>
                 </div>
               </div>
